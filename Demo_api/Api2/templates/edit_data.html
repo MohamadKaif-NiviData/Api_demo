@@ -1,0 +1,25 @@
+{% load static %}   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{get_data.id}}
+    <form  id="form" method="post"  >
+        {% csrf_token %}
+        <input type="text" id ="uid"  value="{{get_data.id}}" hidden placeholder="name">       
+<input type="text" id ="name"  value="{{get_data.name}}" placeholder="name">
+<input type="text" id ="body" placeholder="no" value="{{get_data.no}}">
+<input type="text" id ="city" placeholder="city" value="{{get_data.city}}">
+<input type="submit" value="Add ToDo">
+
+    </form>
+    <div id="res">
+
+    </div>
+    <script src="{% static 'edit.js' %}"></script>
+</body>
+</html>
